@@ -46,11 +46,6 @@ mongoose.connect(process.env.MONGODB_URI, {
   console.log('✅ MongoDB connected');
   app.listen(PORT, () => {
     console.log(`🚀 Server on port ${PORT}`);
-    if (!process.env.ANTHROPIC_API_KEY) {
-      console.error('❌ ANTHROPIC_API_KEY missing from .env — AI analysis will fail');
-    } else {
-      console.log('🤖 AI expiry analysis ready');
-    }
   });
 })
 .catch(err => {
