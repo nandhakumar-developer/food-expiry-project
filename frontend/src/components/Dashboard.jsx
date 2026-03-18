@@ -53,7 +53,7 @@ function Dashboard() {
   const navItems = [
     { id: "list", icon: LayoutList, label: "Inventory", path: "/dashboard" },
     { id: "add", icon: PlusCircle, label: "Add Item", path: "/dashboard/add" },
-    { id: "progress", icon: BarChart3, label: "Analytics", path: "/dashboard/progress" },
+    { id: "progress", icon: Leaf, label: "Scan-Nutrition", path: "/dashboard/progress" },
     { id: "recipes", icon: ChefHat, label: "Recipes", path: "/dashboard/recipes" }
   ];
 
