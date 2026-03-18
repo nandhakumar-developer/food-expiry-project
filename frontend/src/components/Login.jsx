@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
-import { Mail, Lock, Leaf, Loader2 } from "lucide-react";
+import { Mail, Lock, Leaf, Loader2, Eye, EyeOff } from "lucide-react";
 import { motion } from "framer-motion";
 import loginBg from "../images/login background image.jpg";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -55,15 +56,12 @@ function Login() {
 
           {/* Header */}
           <div className="flex flex-col items-center mb-6">
-
             <div className="bg-green-100 p-3 rounded-full mb-3">
               <Leaf className="text-green-600 w-7 h-7" />
             </div>
-
             <h2 className="text-2xl font-bold text-gray-800">
               Food Expiry Manager
             </h2>
-
             <p className="text-gray-500 text-sm mt-1">
               Track freshness. Reduce food waste.
             </p>
@@ -84,10 +82,8 @@ function Login() {
               <label className="text-sm font-medium text-gray-600">
                 Email
               </label>
-
               <div className="mt-1 flex items-center bg-white border rounded-lg px-3 py-2 focus-within:ring-2 focus-within:ring-green-500 transition">
-                <Mail className="w-4 h-4 text-gray-400 mr-2" />
-
+                <Mail className="w-4 h-4 text-gray-400 mr-2 shrink-0" />
                 <input
                   type="email"
                   value={email}
@@ -104,18 +100,28 @@ function Login() {
               <label className="text-sm font-medium text-gray-600">
                 Password
               </label>
-
               <div className="mt-1 flex items-center bg-white border rounded-lg px-3 py-2 focus-within:ring-2 focus-within:ring-green-500 transition">
-                <Lock className="w-4 h-4 text-gray-400 mr-2" />
-
+                <Lock className="w-4 h-4 text-gray-400 mr-2 shrink-0" />
                 <input
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
                   placeholder="Enter your password"
                   className="w-full outline-none text-sm bg-transparent"
                 />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword((prev) => !prev)}
+                  className="ml-2 text-gray-400 hover:text-green-600 transition shrink-0"
+                  tabIndex={-1}
+                >
+                  {showPassword ? (
+                    <EyeOff className="w-4 h-4" />
+                  ) : (
+                    <Eye className="w-4 h-4" />
+                  )}
+                </button>
               </div>
             </div>
 
