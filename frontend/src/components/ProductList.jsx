@@ -405,7 +405,7 @@ export default function ProductList() {
                 style={{ backgroundColor: cfg.cardBgHex }}
               >
                 {/* Top stripe — thickness = urgency */}
-                <div className={`bg-gradient-to-r ${cfg.stripe} w-full
+                <div className={`bg-linear-to-r ${cfg.stripe} w-full
                   ${bucket==="expired"?"h-2":bucket==="expiringSoon"?"h-1.5":"h-1"}`}/>
 
                 <div className="relative p-5 flex-1">
@@ -471,7 +471,7 @@ export default function ProductList() {
                       {/* Header row */}
                       <div className="flex items-start justify-between gap-3 mb-4">
                         <div className="flex items-center gap-3 min-w-0">
-                          <div className={`shrink-0 w-10 h-10 rounded-xl flex items-center justify-center bg-gradient-to-br ${cfg.stripe} shadow-sm`}>
+                          <div className={`shrink-0 w-10 h-10 rounded-xl flex items-center justify-center bg-linear-to-br ${cfg.stripe} shadow-sm`}>
                             <BIcon size={18} className="text-white"/>
                           </div>
                           <div className="min-w-0">
@@ -574,7 +574,7 @@ export default function ProductList() {
                         {product.status !== "active" && (
                           <motion.button whileTap={{ scale:0.95 }}
                             onClick={() => updateStatus(product._id, "active")}
-                            className="flex items-center gap-1.5 text-xs font-bold bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-3.5 py-2 rounded-xl hover:from-blue-600 hover:to-indigo-700 transition-all shadow-sm">
+                            className="flex items-center gap-1.5 text-xs font-bold bg-linear-to-r from-blue-500 to-indigo-600 text-white px-3.5 py-2 rounded-xl hover:from-blue-600 hover:to-indigo-700 transition-all shadow-sm">
                             <RotateCcw size={13}/> Restore
                           </motion.button>
                         )}

@@ -527,7 +527,7 @@ export default function AddProduct() {
           <button
             onClick={handleSubmit}
             disabled={loading || !formData.name}
-            className="flex-[2] py-3.5 rounded-2xl text-sm font-bold text-white flex items-center justify-center gap-2 shadow-lg transition-all active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="flex-2 py-3.5 rounded-2xl text-sm font-bold text-white flex items-center justify-center gap-2 shadow-lg transition-all active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
             style={{ background: loading || !formData.name ? '#9CA3AF' : `linear-gradient(135deg, ${G}, ${GD})` }}>
             {loading
               ? <><Loader className="animate-spin" size={16}/> Adding Product…</>

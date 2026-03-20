@@ -6,8 +6,7 @@ import dotenv from 'dotenv';
 import authRoutes     from './routes/auth.js';
 import productRoutes  from './routes/products.js';
 import progressRoutes from './routes/progress.js';
-import recipeRoutes   from './routes/recipes.js';
-import analyseRoutes  from './routes/analyse.js';
+
 
 dotenv.config();
 
@@ -40,8 +39,7 @@ if (!process.env.MONGODB_URI) {
 app.use('/api/auth',     authRoutes);
 app.use('/api/products', productRoutes);
 app.use('/api/progress', progressRoutes);
-app.use('/api/recipes',  recipeRoutes);
-app.use('/api/analyse',  analyseRoutes);
+
 
 // ── Health check ──────────────────────────────────────────────────────────────
 app.get('/api/health', (req, res) => {
